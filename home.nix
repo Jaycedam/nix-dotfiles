@@ -54,7 +54,7 @@ in {
                         gimp
                         android-tools
                         brave
-                        # ghostty #(currently broken)
+                        # ghostty #broken
                         iina
                         # jellyfin-media-player #broken
                         localsend
@@ -86,6 +86,10 @@ in {
                         };
                 };
 
+		starship = {
+		enable = true;
+		};
+
                 fzf = {
                         enable = true;
                         colors = {
@@ -105,29 +109,55 @@ in {
                                 "separator"="#ff966c";
                                 "spinner"="#ff007c";
                         };
-                };
+		};
 
-                bat = {
-                        enable = true;
-                        # themes = {
-                        #         tokyonight = {
-                        #                 src = pkgs.fetchFromGitHub {
-                        #                         owner = "folke";
-                        #                         repo = "tokyonight.nvim"; # Bat uses sublime syntax for its themes
-                        #                 };
-                        #                 file = "extras/sublime/tokyonight_moon.tmTheme";
-                        #         };
-                        # };
-                };
+		bat = {
+			enable = true;
+			config = {
+				theme = "tokyonight";
+			};
+			themes = {
+				tokyonight = {
+					src = pkgs.fetchFromGitHub {
+						owner = "folke";
+						repo = "tokyonight.nvim"; # Bat uses sublime syntax for its themes
+							rev = "v4.11.0";
+						hash = "sha256-pMzk1gRQFA76BCnIEGBRjJ0bQ4YOf3qecaU6Fl/nqLE=";
+					};
+					file = "extras/sublime/tokyonight_moon.tmTheme";
+				};
+			};
+		};
 
-                neovim = {
-                        enable = true;
-                        defaultEditor = true;
-                        viAlias = true;
-                        vimAlias = true;
-# TODO: add my config
-                };
+		neovim = {
+			enable = true;
+			defaultEditor = true;
+			viAlias = true;
+			vimAlias = true;
+
+		};
+
+		ghostty = {
+			settings = {
+				theme = "tokyonight_moon";
+#background = #111111;
+
+				font-size = 14;
+				mouse-hide-while-typing = "true";
+				macos-titlebar-style = "tabs";
+				window-save-state = "always";
+				window-new-tab-position = "end";
+
+# change to "center" when this issue about the quick terminal size is closed https://github.com/ghostty-org/ghostty/issues/2384
+				quick-terminal-position = "center";
+# quick-terminal-size = 80%,80%;
+
+# Keybinds
+# super+enter was originally fullscreen, but macOS has a native keybind for that "fn+f"
+				keybind = "global:super+enter=toggle_quick_terminal";
+			};
+		};
 
 
-        };
+	};
 }
