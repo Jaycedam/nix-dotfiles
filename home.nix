@@ -31,7 +31,6 @@ in
   # TODO: Consider moving LSP/Formatters to shells
   home.packages = with pkgs; [
     nodejs_23
-    btop
     fd
     ffmpeg
     gh
@@ -74,12 +73,9 @@ in
     zsh = import ./dotfiles/zsh.nix;
     fzf = import ./dotfiles/fzf.nix;
     bat = import ./dotfiles/bat.nix { inherit pkgs; };
-    neovim = import ./dotfiles/nvim/default.nix { inherit pkgs; };
+    neovim = import ./dotfiles/nvim/nvim.nix { inherit pkgs; };
     ghostty = import ./dotfiles/ghostty.nix; # this does nothing yet since the package is broken
-
-    # Might change for pure prompt
-    starship = {
-      enable = true;
-    };
+    btop = import ./dotfiles/btop.nix;
+    starship = import ./dotfiles/prompt.nix; # Might change for pure prompt
   };
 }
