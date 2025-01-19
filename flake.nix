@@ -37,7 +37,6 @@
           nixpkgs.config.allowUnfree = true;
 
           environment.systemPackages = with pkgs; [
-            aerospace
             utm
             iina
           ];
@@ -61,7 +60,7 @@
           security.pam.enableSudoTouchIdAuth = true;
 
           services = {
-            aerospace = import ./modules/dotfiles/aerospace.nix;
+            skhd = import ./modules/dotfiles/skhd.nix;
           };
 
           networking = {
