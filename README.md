@@ -1,7 +1,6 @@
 # *NIX Setup
 
 ## Description
-
 This is my nix config for macOS (and eventually Linux). 
 
 *It's very early, so only Darwin setup works for now. Check the issues for features missing.*
@@ -13,19 +12,22 @@ All the plugins are installed, loaded and configured within home-manager using N
 
 ## Setup
 
+WIP.
+
 1. Install Nix:
 ```bash
 sh <(curl -L https://nixos.org/nix/install)
 ```
 
 2. Restart the shell by opening a new tab or restarting the terminal. 
-Then start a temporary shell with git and install nix-darwin:
+Then start a temporary shell with git, clone the repo and install nix-darwin:
 ```bash
 nix-shell -p git
+git clone https://github.com/Jaycedam/nix-dotfiles.git ~/Developer/nix
 nix run nix-darwin --extra-experimental-features "nix-command flakes" -- switch --flake ~/Developer/nix#mac
 ```
 
-3. Apply the config:
+3. Restart the shell again, then apply the config:
 ```bash
 darwin-rebuild switch --flake ~/Developer/nix#mac
 ```
