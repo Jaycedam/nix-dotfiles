@@ -76,7 +76,7 @@ in
     neovim = import ./dotfiles/nvim/nvim.nix { inherit pkgs; };
     ghostty = import ./dotfiles/ghostty.nix; # this does nothing yet since the package is broken
     btop = import ./dotfiles/btop.nix;
+    kitty = import ./dotfiles/kitty.nix;
     starship = import ./dotfiles/prompt.nix; # Might change for pure prompt
-    alacritty = import ./dotfiles/alacritty.nix;
   };
 }
