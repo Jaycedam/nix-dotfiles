@@ -3,6 +3,7 @@
 ## Description
 
 This is my nix config for macOS (and eventually Linux). 
+
 *It's very early, so only Darwin setup works for now. Check the issues for features missing.*
 
 I'm using Nix package manager with flakes, nix-darwin for macOS deterministic setup and home-manager for software packages and dotfiles.
