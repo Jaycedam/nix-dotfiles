@@ -31,7 +31,10 @@
           # $ nix-env -qaP | grep wget
           nixpkgs.config.allowUnfree = true;
 
-          environment.systemPackages = [
+          environment.systemPackages = with pkgs; [
+            aerospace
+            utm
+            iina
           ];
 
           users.users.jay = {
@@ -58,11 +61,14 @@
             localHostName = "Jays-Mac";
           };
 
+          services = {
+            aerospace = import ./modules/dotfiles/aerospace.nix;
+          };
+
           system = {
             keyboard = {
               enableKeyMapping = true;
               remapCapsLockToEscape = true;
-              # nonUS.remapTilde = true;
             };
 
             defaults = {
@@ -77,10 +83,6 @@
                 show-recents = false;
                 showhidden = true;
                 tilesize = 50;
-                # persistent-apps = [
-                #   "/Applications/Safari.app"
-                #   "/Applications/Mail.app"
-                # ];
               };
 
               screencapture.location = "~/Pictures/Screenshots";
@@ -118,7 +120,7 @@
     in
     {
       # Build darwin flake using:
-      # $ darwin-rebuild build --flake .#simple
+      # $ darwin-rebuild build --flake .#mac
       darwinConfigurations."mac" = nix-darwin.lib.darwinSystem {
         modules = [
           configuration
@@ -131,8 +133,5 @@
           }
         ];
       };
-
-      # Expose the package set, including overlays, for convenience.
-      # darwinPackages = self.darwinConfigurations."tsukuyomi".pkgs;
     };
 }

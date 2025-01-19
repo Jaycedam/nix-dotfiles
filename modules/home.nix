@@ -44,10 +44,8 @@ in
     gimp
     android-tools
     brave
-    iina
     localsend
     transmission_4
-    utm
     # ghostty #broken
     # jellyfin-media-player #broken
 
@@ -79,5 +77,6 @@ in
     ghostty = import ./dotfiles/ghostty.nix; # this does nothing yet since the package is broken
     btop = import ./dotfiles/btop.nix;
     starship = import ./dotfiles/prompt.nix; # Might change for pure prompt
+    alacritty = import ./dotfiles/alacritty.nix;
   };
 }
