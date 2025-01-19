@@ -61,9 +61,7 @@
           security.pam.enableSudoTouchIdAuth = true;
 
           services = {
-            aerospace = {
-              enable = true;
-            };
+            aerospace = import ./modules/dotfiles/aerospace.nix;
           };
 
           networking = {
