@@ -49,8 +49,67 @@
           # $ darwin-rebuild changelog
           system.stateVersion = 5;
 
-          system.defaults = {
-            finder.FXPreferredViewStyle = "clmv";
+          # darwin config
+          security.pam.enableSudoTouchIdAuth = true;
+
+          networking = {
+            computerName = "Jay's Mac";
+            hostName = "Jays-Mac";
+            localHostName = "Jays-Mac";
+          };
+
+          system = {
+            keyboard = {
+              enableKeyMapping = true;
+              remapCapsLockToEscape = true;
+              # nonUS.remapTilde = true;
+            };
+
+            defaults = {
+              WindowManager.EnableTiledWindowMargins = false;
+              controlcenter.BatteryShowPercentage = true;
+              menuExtraClock.ShowAMPM = false;
+
+              dock = {
+                autohide = true;
+                autohide-delay = 0.0;
+                mru-spaces = false; # Whether to automatically rearrange spaces based on most recent use.
+                show-recents = false;
+                showhidden = true;
+                tilesize = 50;
+                # persistent-apps = [
+                #   "/Applications/Safari.app"
+                #   "/Applications/Mail.app"
+                # ];
+              };
+
+              screencapture.location = "~/Pictures/Screenshots";
+              screensaver = {
+                askForPassword = true;
+                askForPasswordDelay = 0;
+              };
+
+              finder = {
+                ShowStatusBar = true;
+                _FXSortFoldersFirst = true;
+                _FXSortFoldersFirstOnDesktop = true;
+                AppleShowAllExtensions = true;
+                AppleShowAllFiles = true;
+                FXDefaultSearchScope = "SCcf"; # "SCcf" to search current folder.
+                FXPreferredViewStyle = "clmv"; # Column View
+                FXRemoveOldTrashItems = true; # Remove items in the trash after 30 days.
+                NewWindowTarget = "Home";
+                ShowPathbar = true;
+              };
+
+              NSGlobalDomain = {
+                AppleInterfaceStyle = "Dark";
+                AppleWindowTabbingMode = "always";
+                InitialKeyRepeat = 15;
+                KeyRepeat = 2;
+                NSAutomaticSpellingCorrectionEnabled = false;
+              };
+            };
           };
 
           # The platform the configuration will be used on.
