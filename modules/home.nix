@@ -46,6 +46,7 @@ in
     brave
     localsend
     transmission_4
+    spotube
     # ghostty #broken
     # jellyfin-media-player #broken
 
