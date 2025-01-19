@@ -1,5 +1,5 @@
 {
-  description = "Example Darwin system flake";
+  description = "Main Flake";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
@@ -38,9 +38,6 @@
             name = username;
             home = "/Users/jay";
           };
-
-          # Auto upgrade nix package and the daemon service.
-          services.nix-daemon.enable = true;
 
           # Necessary for using flakes on this system.
           nix.settings.experimental-features = "nix-command flakes";

@@ -44,12 +44,12 @@ in
     gimp
     android-tools
     brave
-    # ghostty #broken
     iina
-    # jellyfin-media-player #broken
     localsend
     transmission_4
     utm
+    # ghostty #broken
+    # jellyfin-media-player #broken
 
     # LSP AND FORMATTERS
     taplo
