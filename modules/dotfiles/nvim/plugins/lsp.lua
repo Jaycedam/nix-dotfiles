@@ -22,10 +22,6 @@ lspconfig.marksman.setup({
 	filetypes = { "markdown" },
 	capabilities = capabilities,
 })
-lspconfig.mdx_analyzer.setup({
-	filetypes = { "markdown.mdx", "mdx" },
-	capabilities = capabilities,
-})
 lspconfig.lua_ls.setup({ capabilities = capabilities })
 lspconfig.gopls.setup({ capabilities = capabilities }) -- go
 lspconfig.bashls.setup({ capabilities = capabilities })

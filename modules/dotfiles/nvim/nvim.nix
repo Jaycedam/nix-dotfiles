@@ -12,6 +12,7 @@
   '';
 
   plugins = with pkgs.vimPlugins; [
+    friendly-snippets
     {
       plugin = tokyonight-nvim;
       type = "lua";
@@ -42,16 +43,21 @@
       type = "lua";
       config = "${builtins.readFile ./plugins/lsp.lua}";
     }
-    # {
-    #     plugin = which-key-nvim;
-    #     type = "lua";
-    #     config = "${builtins.readFile ./plugins/which-key.lua}";
-    # }
-    # {
-    #     plugin = mini-pairs;
-    #     type = "lua";
-    #     config = "${builtins.readFile ./plugins/pairs.lua}";
-    # }
+    {
+      plugin = mini-nvim;
+      type = "lua";
+      config = "${builtins.readFile ./plugins/mini.lua}";
+    }
+    {
+      plugin = gitsigns-nvim;
+      type = "lua";
+      config = "${builtins.readFile ./plugins/gitsigns.lua}";
+    }
+    {
+      plugin = which-key-nvim;
+      type = "lua";
+      config = "${builtins.readFile ./plugins/which-key.lua}";
+    }
   ];
 
 }

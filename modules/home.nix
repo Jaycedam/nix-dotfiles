@@ -52,6 +52,7 @@ in
     # jellyfin-media-player #broken
 
     # LSP AND FORMATTERS
+    astro-language-server
     taplo
     shfmt
     stylua
@@ -67,6 +68,7 @@ in
     typescript-language-server
     vscode-langservers-extracted
     prettierd
+    djlint
   ];
 
   programs = {
