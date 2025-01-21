@@ -1,4 +1,9 @@
 {
   enable = true;
-  # TODO: Add the rest of the config
+  settings = {
+
+    package = {
+      disabled = true;
+    };
+  };
 }

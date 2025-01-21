@@ -79,5 +79,7 @@ in
     btop = import ./dotfiles/btop.nix;
     kitty = import ./dotfiles/kitty.nix;
     starship = import ./dotfiles/prompt.nix; # Might change for pure prompt
+    tmux = import ./dotfiles/tmux.nix;
+    alacritty = import ./dotfiles/alacritty.nix;
   };
 }

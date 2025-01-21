@@ -22,6 +22,7 @@
       ...
     }@inputs:
     let
+      # TODO: move darwin config to module
       username = "jay";
 
       configuration =
@@ -39,6 +40,10 @@
           environment.systemPackages = with pkgs; [
             utm
             iina
+          ];
+
+          fonts.packages = with pkgs; [
+            nerd-fonts.jetbrains-mono
           ];
 
           users.users.jay = {

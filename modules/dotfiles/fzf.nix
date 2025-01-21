@@ -1,5 +1,11 @@
 {
   enable = true;
+  tmux = {
+    enableShellIntegration = true;
+    shellIntegrationOptions = [
+      "-p 80%"
+    ];
+  };
   colors = {
     "bg+" = "#2d3f76";
     "border" = "#589ed7";
@@ -20,11 +26,10 @@
 
   defaultOptions = [
     "--bind 'ctrl-y:accept'"
-    "--highlight-line"
-    "--height 90%"
     "--info=inline-right"
+    "--highlight-line"
+    "--height 80%"
     "--layout=reverse-list"
-    "--border=none"
     "--color=bg+:#2d3f76"
     "--color=border:#589ed7"
     "--color=fg:#c8d3f5"
